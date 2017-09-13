@@ -1,7 +1,5 @@
 ### Finding Lane Lines on the Road - Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
 My full, picture-processing pipeline has 9 possible steps, however the one used in the function for the video stream has only 6. Please note that all fine tunings were done manually and they may be subjective.
 
 1. Read all images (only during picture-processing).
