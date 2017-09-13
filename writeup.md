@@ -26,12 +26,12 @@ My full, picture-processing pipeline has 9 possible steps, however the one used 
 ![alt text](https://github.com/szokezsolt/CarND-Project1/blob/master/pics/6_hough.jpg)
 ---
 
-7/A. Calculate the weighted image using the markings and the original picture (7/A or 7/B).
+7/A. Calculate the weighted image using the markings and the original picture. OR:
 ![alt text](https://github.com/szokezsolt/CarND-Project1/blob/master/pics/7_weighted.jpg)
 ---
 
 7/B. Using extrapolation the extension of the markings are also to be plotted. This is the modified draw_lines() function. I first classified the lines into left lane markings (slope < -0.3) or right lane markings (slope > 0.3), then all end points of all lines are stored separately for left and right. The last step is to fit a line on each side onto these points in the region of interest.
-![alt text](8_extrapolated.jpg)
+![alt text](https://github.com/szokezsolt/CarND-Project1/blob/master/pics/8_extrapolated.jpg)
 ---
 
 8. Save image (only during picture-processing).
