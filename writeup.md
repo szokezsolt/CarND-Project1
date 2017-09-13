@@ -1,12 +1,4 @@
-# **Finding Lane Lines on the Road** 
-
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Finding Lane Lines on the Road**
+### Finding Lane Lines on the Road
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
@@ -15,7 +7,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+
 
 ---
 
@@ -23,9 +15,43 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My full, picture-processing pipeline has 9 possible steps, however the one used in the function for the video stream has only 6. Please note that all fine tunings were done manually and they may be subjective.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+1. Read all images (only during picture-processing).
+
+[image1]: ./pics/1_initial.jpg
+---
+
+2. Use Gaussian blur in order to reduce the details on the picture and to make edge detection clearer later.
+[image2]: ./pics/2_smooth.jpg
+---
+
+3. Select the appropriate colors - white and yellow - for lane detection.
+[image3]: ./pics/3_color.jpg
+---
+
+4. Apply Canny edge detection to help finding the lanes' long edges.
+[image4]: ./pics/4_canny.jpg
+---
+
+5. Select the region of interest.
+[image5]: ./pics/5_masked.jpg
+---
+
+6. Calculate the Hough lines to find the lane markings.
+[image6]: ./pics/6_hough.jpg
+---
+
+7/A. Calculate the weighted image using the markings and the original picture (7/A or 7/B).
+[image7]: ./pics/7_weighted.jpg
+---
+
+7/B. Using extrapolation the extension of the markings are also to be plotted. This is the modified draw_lines() function. I first classified the lines into left lane markings (slope < -0.3) or right lane markings (slope > 0.3)
+[image8]: ./pics/8_extrapolated.jpg
+---
+
+8. Save the images (only during picture-processing). 
+
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
@@ -34,14 +60,14 @@ If you'd like to include images to show how the pipeline works, here is how to i
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+My pipeline uses 1st order polynomial (i.e. linear) fit to calculate the extensions of the lines, hence it can manage only straight sections and slight corners.
 
-One potential shortcoming would be what would happen when ... 
+Another issues may be other bright, longitudinal patterns on the road, which may also be detected, as lanes.
 
-Another shortcoming could be ...
-
+This simple realization works well only in case of excellent visibility.
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to use higher order polynomial fits for extrapolation.
 
-Another potential improvement could be to ...
+Color selection might be better using HSV instead of RGB.
