@@ -4,18 +4,6 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
-
-[//]: # (Image References)
-[image1]: ./pics/1_initial.jpg
-[image2]: ./pics/2_smooth.jpg
-[image3]: ./pics/3_color.jpg
-[image4]: ./pics/4_canny.jpg
-[image5]: ./pics/5_masked.jpg
-[image6]: ./pics/6_hough.jpg
-[image7]: ./pics/7_weighted.jpg
-[image8]: ./pics/8_extrapolated.jpg
----
-
 ### Reflection
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
@@ -23,37 +11,38 @@ The goals / steps of this project are the following:
 My full, picture-processing pipeline has 9 possible steps, however the one used in the function for the video stream has only 6. Please note that all fine tunings were done manually and they may be subjective.
 
 1. Read all images (only during picture-processing).
-![alt text][image1]
-
+![alt text](https://github.com/szokezsolt/CarND-Project1/blob/master/pics/1_initial.jpg)
 ---
 
 2. Use Gaussian blur in order to reduce the details on the picture and to make edge detection clearer later.
-
+![alt text]()
 ---
 
 3. Select the appropriate colors - white and yellow - for lane detection.
-
+![alt text]()
 ---
 
 4. Apply Canny edge detection to help finding the lanes' long edges.
-
+![alt text]()
 ---
 
 5. Select the region of interest.
-
+![alt text]()
 ---
 
 6. Calculate the Hough lines to find the lane markings.
-
+![alt text]()
 ---
 
 7/A. Calculate the weighted image using the markings and the original picture (7/A or 7/B).
-
+![alt text]()
 ---
 
 7/B. Using extrapolation the extension of the markings are also to be plotted. This is the modified draw_lines() function. I first classified the lines into left lane markings (slope < -0.3) or right lane markings (slope > 0.3)
-
+![alt text]()
 ---
+
+8. Save image (only during picture-processing).
 
 
 ### 2. Identify potential shortcomings with your current pipeline
