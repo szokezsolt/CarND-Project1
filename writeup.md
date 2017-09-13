@@ -6,7 +6,7 @@ My full, picture-processing pipeline has 9 possible steps, however the one used 
 ![alt text](https://github.com/szokezsolt/CarND-Project1/blob/master/pics/1_initial.jpg)
 ---
 
-2. Use Gaussian blur in order to reduce the details on the picture and to make edge detection clearer later.
+2. Use Gaussian blur in order to reduce the unnecessary details in the picture and to make edge detection clearer later.
 ![alt text](https://github.com/szokezsolt/CarND-Project1/blob/master/pics/2_smooth.jpg)
 ---
 
